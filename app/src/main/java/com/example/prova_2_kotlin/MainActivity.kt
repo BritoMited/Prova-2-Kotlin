@@ -170,8 +170,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
 
             Button(onClick = {
 
-                level--
-                jogadorResp.level = level
+                if(level > 0) {
+                    level--
+                    jogadorResp.level = level
+                }
 
             }) {
                 Text(text = "-",  fontSize = 17.sp)
@@ -179,8 +181,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
             Text(text = "level: ${jogadorResp.level}", fontSize = 22.sp)
             Button(onClick = {
 
-                level++
-                jogadorResp.level = level
+                if(level < 10) {
+                    level++
+                    jogadorResp.level = level
+                }
 
             }) {
                 Text(text = "+",  fontSize = 17.sp)
@@ -192,8 +196,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
 
             Button(onClick = {
 
-                equipamento--
-                jogadorResp.equipamento = equipamento
+                if(equipamento > 0) {
+                    equipamento--
+                    jogadorResp.equipamento = equipamento
+                }
 
             }) {
                 Text(text = "-",  fontSize = 17.sp)
@@ -201,8 +207,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
             Text(text = "equipamento: ${jogadorResp.equipamento}",  fontSize = 22.sp)
             Button(onClick = {
 
-                equipamento++
-                jogadorResp.equipamento = equipamento
+                if(equipamento < 40) {
+                    equipamento++
+                    jogadorResp.equipamento = equipamento
+                }
 
             }) {
                 Text(text = "+",  fontSize = 17.sp)
@@ -214,8 +222,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
 
             Button(onClick = {
 
-                modificador--
-                jogadorResp.modificador = modificador
+                if(modificador > -5) {
+                    modificador--
+                    jogadorResp.modificador = modificador
+                }
 
             }) {
                 Text(text = "-",  fontSize = 17.sp)
@@ -223,8 +233,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
             Text(text = "Modificadores: ${jogadorResp.modificador}",  fontSize = 22.sp)
             Button(onClick = {
 
-                modificador++
-                jogadorResp.modificador = modificador
+                if(modificador < 10) {
+                    modificador++
+                    jogadorResp.modificador = modificador
+                }
 
             }) {
                 Text(text = "+",  fontSize = 17.sp)
