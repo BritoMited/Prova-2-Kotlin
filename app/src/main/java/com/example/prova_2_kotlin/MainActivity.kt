@@ -89,7 +89,9 @@ fun LayoutCadastroPlayers(navController: NavController, list: MutableList<Jogado
 fun LayoutListaJogadores(navController: NavController, listaJogadores: List<Jogador>) {
 
 
-    Column {
+    Column(modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+        ) {
 
         LazyColumn{
             items(listaJogadores){
@@ -104,7 +106,7 @@ fun LayoutListaJogadores(navController: NavController, listaJogadores: List<Joga
 
                 }) {
 
-                    Text(text = "Jogador: ${jogador.nome} )")
+                    Text(text = "Jogador: ${jogador.nome}")
                 }
 
             }
@@ -144,7 +146,10 @@ fun LayoutDetalhesJogadores(navController: NavController, jogadorResp: Jogador, 
     var equipamento by remember { mutableStateOf(0.0) }
     var modificador by remember { mutableStateOf(0.0) }
 
-
+    poderTotal = jogadorResp.poderTotal
+    level = jogadorResp.level
+    equipamento = jogadorResp.equipamento
+    modificador = jogadorResp.modificador
 
     Column(
         modifier = Modifier.fillMaxSize(),
